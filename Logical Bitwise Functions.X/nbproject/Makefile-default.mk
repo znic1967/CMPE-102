@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=C:/Users/Nicholson/Desktop/lbf.s
+SOURCEFILES_QUOTED_IF_SPACED=lbf.s
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/551257295/lbf.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/551257295/lbf.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/lbf.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/lbf.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/_ext/551257295/lbf.o
+OBJECTFILES=${OBJECTDIR}/lbf.o
 
 # Source Files
-SOURCEFILES=C:/Users/Nicholson/Desktop/lbf.s
+SOURCEFILES=lbf.s
 
 
 CFLAGS=
@@ -100,20 +100,20 @@ endif
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: assemble
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/_ext/551257295/lbf.o: C:/Users/Nicholson/Desktop/lbf.s  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/551257295" 
-	@${RM} ${OBJECTDIR}/_ext/551257295/lbf.o.d 
-	@${RM} ${OBJECTDIR}/_ext/551257295/lbf.o 
-	${MP_CC} $(MP_EXTRA_AS_PRE)  C:/Users/Nicholson/Desktop/lbf.s  -o ${OBJECTDIR}/_ext/551257295/lbf.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -D__DEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  -Wa,-MD,"${OBJECTDIR}/_ext/551257295/lbf.o.d",--defsym=__MPLAB_BUILD=1,--defsym=__MPLAB_DEBUG=1,--defsym=__DEBUG=1,--defsym=__MPLAB_DEBUGGER_SIMULATOR=1,-g,--no-relax$(MP_EXTRA_AS_POST)
-	@${FIXDEPS} "${OBJECTDIR}/_ext/551257295/lbf.o.d"  $(SILENT)  -rsi ${MP_CC_DIR}../  
+${OBJECTDIR}/lbf.o: lbf.s  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/lbf.o.d 
+	@${RM} ${OBJECTDIR}/lbf.o 
+	${MP_CC} $(MP_EXTRA_AS_PRE)  lbf.s  -o ${OBJECTDIR}/lbf.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -D__DEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  -Wa,-MD,"${OBJECTDIR}/lbf.o.d",--defsym=__MPLAB_BUILD=1,--defsym=__MPLAB_DEBUG=1,--defsym=__DEBUG=1,--defsym=__MPLAB_DEBUGGER_SIMULATOR=1,-g,--no-relax$(MP_EXTRA_AS_POST)
+	@${FIXDEPS} "${OBJECTDIR}/lbf.o.d"  $(SILENT)  -rsi ${MP_CC_DIR}../  
 	
 else
-${OBJECTDIR}/_ext/551257295/lbf.o: C:/Users/Nicholson/Desktop/lbf.s  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/551257295" 
-	@${RM} ${OBJECTDIR}/_ext/551257295/lbf.o.d 
-	@${RM} ${OBJECTDIR}/_ext/551257295/lbf.o 
-	${MP_CC} $(MP_EXTRA_AS_PRE)  C:/Users/Nicholson/Desktop/lbf.s  -o ${OBJECTDIR}/_ext/551257295/lbf.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  -Wa,-MD,"${OBJECTDIR}/_ext/551257295/lbf.o.d",--defsym=__MPLAB_BUILD=1,-g,--no-relax$(MP_EXTRA_AS_POST)
-	@${FIXDEPS} "${OBJECTDIR}/_ext/551257295/lbf.o.d"  $(SILENT)  -rsi ${MP_CC_DIR}../  
+${OBJECTDIR}/lbf.o: lbf.s  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/lbf.o.d 
+	@${RM} ${OBJECTDIR}/lbf.o 
+	${MP_CC} $(MP_EXTRA_AS_PRE)  lbf.s  -o ${OBJECTDIR}/lbf.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  -Wa,-MD,"${OBJECTDIR}/lbf.o.d",--defsym=__MPLAB_BUILD=1,-g,--no-relax$(MP_EXTRA_AS_POST)
+	@${FIXDEPS} "${OBJECTDIR}/lbf.o.d"  $(SILENT)  -rsi ${MP_CC_DIR}../  
 	
 endif
 
