@@ -15,7 +15,7 @@ Command:
   -Lc:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../support/dsPIC30F/gld \
   -Lc:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../support/dsPIC33E/gld \
   -Lc:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../support/dsPIC33F/gld \
-  build/default/debug/_ext/551257295/lbf.o \
+  build/default/debug/lbf.o \
   --local-stack \
   --defsym=__MPLAB_BUILD=1 \
   --defsym=__MPLAB_DEBUG=1 \
@@ -129,7 +129,7 @@ aivt             0x000000           0xffffffff
 
 Linker script and memory map
 
-LOAD build/default/debug/_ext/551257295/lbf.o
+LOAD build/default/debug/lbf.o
                     0x0001                  __MPLAB_BUILD = 0x1
                     0x0001                  __MPLAB_DEBUG = 0x1
                     0x0001                  __DEBUG = 0x1
@@ -213,18 +213,18 @@ __FUID3
 .comment
  *(.comment)
 
-.debug_info       0x000000         0x9b
+.debug_info       0x000000         0x80
  *(.debug_info)
- .debug_info      0x000000         0x9b build/default/debug/_ext/551257295/lbf.o
+ .debug_info      0x000000         0x80 build/default/debug/lbf.o
  *(.gnu.linkonce.wi.*)
 
 .debug_abbrev     0x000000         0x14
  *(.debug_abbrev)
- .debug_abbrev    0x000000         0x14 build/default/debug/_ext/551257295/lbf.o
+ .debug_abbrev    0x000000         0x14 build/default/debug/lbf.o
 
-.debug_line       0x000000         0x60
+.debug_line       0x000000         0x45
  *(.debug_line)
- .debug_line      0x000000         0x60 build/default/debug/_ext/551257295/lbf.o
+ .debug_line      0x000000         0x45 build/default/debug/lbf.o
 
 .debug_frame
  *(.debug_frame)
@@ -247,7 +247,7 @@ __FUID3
 .debug_aranges    0x000000         0x18
  *(.debug_aranges)
  .debug_aranges
-                  0x000000         0x18 build/default/debug/_ext/551257295/lbf.o
+                  0x000000         0x18 build/default/debug/lbf.o
                     0x0000                  WREG0 = 0x0
                     0x0000                  _WREG0 = 0x0
                     0x0002                  WREG1 = 0x2
@@ -1111,10 +1111,10 @@ __c30_signature
                   0x000018          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\liblega-pic30-elf.a(data_init_extended.o)
 
 .bss                0x1000          0x8
- .bss               0x1000          0x8 build/default/debug/_ext/551257295/lbf.o
+ .bss               0x1000          0x8 build/default/debug/lbf.o
 
 .text             0x0002b8         0x2a
- .text            0x0002b8         0x2a build/default/debug/_ext/551257295/lbf.o
+ .text            0x0002b8         0x2a build/default/debug/lbf.o
                   0x0002b8                  __reset
 
 .dinit            0x0002e2          0x8
