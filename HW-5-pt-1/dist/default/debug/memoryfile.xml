@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project>
-  <executable name="dist/default/production/Bit_Counter.X.production.elf">
+  <executable name="dist/default/debug/HW-5-pt-1.debug.elf">
     <memory name="data">
       <units>bytes</units>
       <length>16384</length>
-      <used>6</used>
-      <free>16378</free>
+      <used>12</used>
+      <free>16372</free>
     </memory>
     <memory name="program">
       <units>bytes</units>
       <length>131298</length>
-      <used>345</used>
-      <free>130953</free>
+      <used>336</used>
+      <free>130962</free>
     </memory>
   </executable>
 </project>
