@@ -6,7 +6,7 @@ Tool Name:
 Command:
   -p24EP128GP202 \
   -o \
-  dist/default/debug/32_bit_sorting.debug.elf \
+  dist/default/debug/ch6_pt1.debug.elf \
   -Lc:/program files (x86)/microchip/xc16/v1.32/bin/bin/.. \
   -Lc:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib \
   -Lc:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../support/PIC24E/gld \
@@ -33,7 +33,7 @@ Command:
   --stackguard=16 \
   --no-force-link \
   --smart-io \
-  -Map=dist/default/debug/32_bit_sorting.debug.map \
+  -Map=dist/default/debug/ch6_pt1.debug.map \
   --report-mem \
   --memorysummary \
   dist/default/debug/memoryfile.xml \
@@ -62,9 +62,9 @@ Program Memory  [Origin = 0x200, Length = 0x155ec]
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200                0xb8           0x114  (276)
-.text                        0x2b8                0x94            0xde  (222)
+.text                        0x2b8                0x2e            0x45  (69)
 
-                 Total program memory used (bytes):          0x1f2  (498) <1%
+                 Total program memory used (bytes):          0x159  (345) <1%
 
 
 Ivt Memory  [Origin = 0x4, Length = 0x1fc]
@@ -211,18 +211,18 @@ __FUID3
 .comment
  *(.comment)
 
-.debug_info       0x000000         0x73
+.debug_info       0x000000         0x6c
  *(.debug_info)
- .debug_info      0x000000         0x73 build/default/debug/src.o
+ .debug_info      0x000000         0x6c build/default/debug/src.o
  *(.gnu.linkonce.wi.*)
 
 .debug_abbrev     0x000000         0x14
  *(.debug_abbrev)
  .debug_abbrev    0x000000         0x14 build/default/debug/src.o
 
-.debug_line       0x000000         0x7a
+.debug_line       0x000000         0x4a
  *(.debug_line)
- .debug_line      0x000000         0x7a build/default/debug/src.o
+ .debug_line      0x000000         0x4a build/default/debug/src.o
 
 .debug_frame
  *(.debug_frame)
@@ -1099,7 +1099,7 @@ LOAD c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\liblega-pic30
 LOAD c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\libm-elf.a
 LOAD c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\liblega-c-elf.a
 END GROUP
-OUTPUT(dist/default/debug/32_bit_sorting.debug.elf elf32-pic30)
+OUTPUT(dist/default/debug/ch6_pt1.debug.elf elf32-pic30)
 LOAD default_isr
 
 __c30_signature
@@ -1107,6 +1107,6 @@ __c30_signature
  __c30_signature
                   0x000018          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\liblega-pic30-elf.a(data_init_extended.o)
 
-.text             0x0002b8         0x94
- .text            0x0002b8         0x94 build/default/debug/src.o
+.text             0x0002b8         0x2e
+ .text            0x0002b8         0x2e build/default/debug/src.o
                   0x0002b8                  __reset

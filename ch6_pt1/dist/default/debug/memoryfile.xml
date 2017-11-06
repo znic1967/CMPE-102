@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project>
-  <executable name="dist/default/debug/32_bit_sorting.debug.elf">
+  <executable name="dist/default/debug/ch6_pt1.debug.elf">
     <memory name="data">
       <units>bytes</units>
       <length>16384</length>
@@ -11,8 +11,8 @@
     <memory name="program">
       <units>bytes</units>
       <length>131298</length>
-      <used>498</used>
-      <free>130800</free>
+      <used>345</used>
+      <free>130953</free>
     </memory>
   </executable>
 </project>

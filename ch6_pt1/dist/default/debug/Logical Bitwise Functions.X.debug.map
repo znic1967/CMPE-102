@@ -6,7 +6,7 @@ Tool Name:
 Command:
   -p24EP128GP202 \
   -o \
-  dist/default/debug/32_bit_sorting.debug.elf \
+  dist/default/debug/Logical_Bitwise_Functions.X.debug.elf \
   -Lc:/program files (x86)/microchip/xc16/v1.32/bin/bin/.. \
   -Lc:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib \
   -Lc:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../support/PIC24E/gld \
@@ -15,7 +15,7 @@ Command:
   -Lc:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../support/dsPIC30F/gld \
   -Lc:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../support/dsPIC33E/gld \
   -Lc:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../support/dsPIC33F/gld \
-  build/default/debug/src.o \
+  build/default/debug/lbf.o \
   --local-stack \
   --defsym=__MPLAB_BUILD=1 \
   --defsym=__MPLAB_DEBUG=1 \
@@ -33,7 +33,7 @@ Command:
   --stackguard=16 \
   --no-force-link \
   --smart-io \
-  -Map=dist/default/debug/32_bit_sorting.debug.map \
+  -Map=dist/default/debug/Logical Bitwise Functions.X.debug.map \
   --report-mem \
   --memorysummary \
   dist/default/debug/memoryfile.xml \
@@ -62,9 +62,10 @@ Program Memory  [Origin = 0x200, Length = 0x155ec]
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200                0xb8           0x114  (276)
-.text                        0x2b8                0x94            0xde  (222)
+.text                        0x2b8                0x2a            0x3f  (63)
+.dinit                       0x2e2                 0x8             0xc  (12)
 
-                 Total program memory used (bytes):          0x1f2  (498) <1%
+                 Total program memory used (bytes):          0x15f  (351) <1%
 
 
 Ivt Memory  [Origin = 0x4, Length = 0x1fc]
@@ -77,8 +78,9 @@ Data Memory  [Origin = 0x1000, Length = 0x4000]
 
 section                    address      alignment gaps    total length  (dec)
 -------                    -------      --------------    -------------------
+.bss                        0x1000                   0             0x8  (8)
 
-                 Total data memory used (bytes):              0  (0) 
+                 Total data memory used (bytes):            0x8  (8) <1%
 
 
 Dynamic Memory Usage
@@ -86,9 +88,9 @@ Dynamic Memory Usage
 region                     address                      maximum length  (dec)
 ------                     -------                      ---------------------
 heap                             0                                   0  (0)
-stack                       0x1000                              0x4000  (16384)
+stack                       0x1008                              0x3ff8  (16376)
 
-                 Maximum dynamic memory (bytes):         0x4000  (16384)
+                 Maximum dynamic memory (bytes):         0x3ff8  (16376)
 
 
 External Symbols in Program Memory (by address):
@@ -127,7 +129,7 @@ aivt             0x000000           0xffffffff
 
 Linker script and memory map
 
-LOAD build/default/debug/src.o
+LOAD build/default/debug/lbf.o
                     0x0001                  __MPLAB_BUILD = 0x1
                     0x0001                  __MPLAB_DEBUG = 0x1
                     0x0001                  __DEBUG = 0x1
@@ -211,18 +213,18 @@ __FUID3
 .comment
  *(.comment)
 
-.debug_info       0x000000         0x73
+.debug_info       0x000000         0x80
  *(.debug_info)
- .debug_info      0x000000         0x73 build/default/debug/src.o
+ .debug_info      0x000000         0x80 build/default/debug/lbf.o
  *(.gnu.linkonce.wi.*)
 
 .debug_abbrev     0x000000         0x14
  *(.debug_abbrev)
- .debug_abbrev    0x000000         0x14 build/default/debug/src.o
+ .debug_abbrev    0x000000         0x14 build/default/debug/lbf.o
 
-.debug_line       0x000000         0x7a
+.debug_line       0x000000         0x45
  *(.debug_line)
- .debug_line      0x000000         0x7a build/default/debug/src.o
+ .debug_line      0x000000         0x45 build/default/debug/lbf.o
 
 .debug_frame
  *(.debug_frame)
@@ -245,7 +247,7 @@ __FUID3
 .debug_aranges    0x000000         0x18
  *(.debug_aranges)
  .debug_aranges
-                  0x000000         0x18 build/default/debug/src.o
+                  0x000000         0x18 build/default/debug/lbf.o
                     0x0000                  WREG0 = 0x0
                     0x0000                  _WREG0 = 0x0
                     0x0002                  WREG1 = 0x2
@@ -1099,14 +1101,21 @@ LOAD c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\liblega-pic30
 LOAD c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\libm-elf.a
 LOAD c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\liblega-c-elf.a
 END GROUP
-OUTPUT(dist/default/debug/32_bit_sorting.debug.elf elf32-pic30)
+OUTPUT(dist/default/debug/Logical_Bitwise_Functions.X.debug.elf elf32-pic30)
 LOAD default_isr
+LOAD data_init
 
 __c30_signature
                   0x000018          0x6
  __c30_signature
                   0x000018          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\liblega-pic30-elf.a(data_init_extended.o)
 
-.text             0x0002b8         0x94
- .text            0x0002b8         0x94 build/default/debug/src.o
+.bss                0x1000          0x8
+ .bss               0x1000          0x8 build/default/debug/lbf.o
+
+.text             0x0002b8         0x2a
+ .text            0x0002b8         0x2a build/default/debug/lbf.o
                   0x0002b8                  __reset
+
+.dinit            0x0002e2          0x8
+ .dinit           0x0002e2          0x8 data_init
